@@ -137,8 +137,10 @@ void Person::updateEvent(sf::Event& event)
 	if (event.type == sf::Event::MouseMoved) {
 		if (this->mouseX == 0) this->mouseX = event.mouseMove.x;
 		//std::cout << this->mouseX - event.mouseMove.x << std::endl;
-		if (this->mouseX - event.mouseMove.x > 0) rotate(-5.f * SENSE);
-		if (this->mouseX - event.mouseMove.x < 0) rotate(5.f * SENSE);
+		//if (this->mouseX - event.mouseMove.x > 0) rotate(-5.f * SENSE);
+		//if (this->mouseX - event.mouseMove.x < 0) rotate(5.f * SENSE);
+
+		rotate(-(this->mouseX - event.mouseMove.x) * SENSE);
 	}
 	
 }
